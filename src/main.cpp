@@ -95,6 +95,12 @@ int main(int argc, char** argv) {
     options.launcher_game_config = "config/game.toml";
     options.launcher_expose_widescreen = false;
     options.launcher_expose_adaptive_view = false;
+    // Picture settings for the launcher's Video panel. All default off, so the
+    // game comes up as the raw 240x160 frame; each is the player's to switch on
+    // and is remembered in config.ini.
+    options.launcher_expose_sharp_filter = true;
+    options.launcher_expose_lcd_ghosting = true;
+    options.launcher_expose_lcd_grid = true;
 
     std::vector<std::string> args(argv, argv + argc);
     const bool player_launch = argc == 1 || (argc == 2 && args[1] == "--launcher");

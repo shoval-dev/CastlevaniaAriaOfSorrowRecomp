@@ -106,6 +106,19 @@ Place `SDL2.dll` next to the executable (staged automatically by `build.ps1` whe
 
 ---
 
+## Graphics settings
+
+Picture options are in the launcher (**Settings → Video**) and are remembered in `config.ini`. They are applied to a copy of each frame at display time, so emulation, saves and frame verification are untouched. All of them are **off by default**: the game starts as the raw 240×160 image. With several on, each frame is ghosted, then colour-graded, then given the grid.
+
+| Launcher | What it does | Command line | `config.ini` `[Launcher]` |
+| :--- | :--- | :--- | :--- |
+| **Scaling filter** | `Nearest` keeps hard pixels. `Linear` smooths. `Sharp fractional` scales each pixel up to a whole number of screen pixels first, so only the leftover fraction gets blurred (at an exact integer window size it is the same as `Nearest`). | `--linear-filter 0\|1`, `--sharp-filter 0\|1` | `linear_filter`, `sharp_filter` |
+| **LCD grid** | Gives every original pixel a bright centre and darker edges, like the cell gaps of the handheld's screen. Only shows from a 3× window (720×480) up; at 2× the image just gets slightly darker. | `--lcd-grid 0\|1` | `lcd_grid` |
+| **LCD ghosting** | Shows each frame blended 50/50 with the one before it, like the slow response of the original LCD. | `--lcd-ghosting 0\|1` | `lcd_ghosting` |
+| **Screen model** | Colour model of the display: `Raw`; the measured `Unlit` / `Frontlit` / `Backlit` panels; `Classic` (the common gamma-4.0 formula); `Color corrected` (the GBA LCD look of NanoBoyAdvance's *Color Correction*). | `--screen raw\|unlit\|frontlit\|backlit\|classic\|agb`, or `GBARECOMP_SCREEN` | `screen` |
+
+---
+
 ## Project layout
 
 ```

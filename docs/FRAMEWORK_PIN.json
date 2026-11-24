@@ -1,7 +1,7 @@
 {
-  "repository": "https://github.com/mstan/gbarecomp.git",
-  "commit": "d11a36261aa1d9587a225760135d0ddea0f97344",
+  "repository": "https://github.com/shoval-dev/gbarecomp.git",
+  "commit": "c75eaf98a0dcb9bb96808a4813afdb0c257470f1",
   "reference_project": "https://github.com/Zaxaerith/GoldenSunTheLostAgeRecomp",
-  "recomp_ui_repository": "https://github.com/mstan/recomp-ui.git",
-  "recomp_ui_commit": "6374aae201b930c97425718249f5d39b2275ca13"
+  "recomp_ui_repository": "https://github.com/shoval-dev/recomp-ui.git",
+  "recomp_ui_commit": "50b0540171bbc9a4829611f88761bbbb4e0347ed"
 }

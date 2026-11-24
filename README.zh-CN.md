@@ -39,9 +39,12 @@
      - 暂停菜单：`Enter` (Start 键)
      - 地图显示：`Backspace` / `RShift` (Select 键)
 3. **视频设置 (Video)**：
-   - 1x ~ 6x 整数画面缩放。
-   - 窗口化与全屏显示切换。
-   - 保持 GBA 原生 240×160 纵横比。
+   - 1x ~ 6x 整数画面缩放；窗口化与全屏切换；保持 GBA 原生 240×160 纵横比。
+   - **Scaling filter（缩放滤镜）**：`Nearest` 保持硬边像素；`Linear` 平滑；`Sharp fractional` 先把每个像素整数倍放大，只对剩余的小数部分做线性插值（窗口恰好是整数倍时与 `Nearest` 相同）。
+   - **LCD grid（LCD 网格）**：给每个原始像素加上中心亮、边缘暗的明暗，模拟掌机屏幕的像素间隙。窗口至少 3×（720×480）才看得出来，2× 时只是画面略暗。
+   - **LCD ghosting（LCD 残影）**：每一帧与上一帧各取 50% 混合，模拟原装 LCD 的响应拖尾。
+   - **Screen model（屏幕模型）**：`Raw`（原始色彩）、`Unlit` / `Frontlit` / `Backlit`（实测面板）、`Classic`（常见的 gamma 4.0 公式）、`Color corrected`（NanoBoyAdvance "Color Correction" 的 GBA LCD 发色）。
+   - 以上效果**默认全部关闭**，游戏以原始 240×160 画面启动；它们只在显示时作用于帧的副本，不影响模拟、存档和帧校验。同时开启时的顺序是：残影 → 色彩 → 网格。
 4. **音频设置 (Audio)**：
    - 主音量调节滑块与实时保存。
 5. **配置持久化**：
